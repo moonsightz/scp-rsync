@@ -14,7 +14,6 @@ def colon(path: str):
     if path.startswith('['):
         flag = True
 
-
     limit = len(path)
     for c in range(limit):
         if c < limit:
@@ -119,7 +118,6 @@ if __name__ == '__main__':
     srcs = args['srcs']
     dst = args['dst']
 
-
     if not skip_dir_check:
         exist_dst = False
         cmd = make_cmd(dst[0])
@@ -142,5 +140,6 @@ if __name__ == '__main__':
                 except subprocess.CalledProcessError:
                     pass
 
-    rsync_cmd = ['rsync'] + rsync_options + ['-e'] + [f'ssh {ssh_options}'] + srcs + dst
+    rsync_cmd = ['rsync'] + rsync_options + ['-e'] + \
+        [f'ssh {ssh_options}'] + srcs + dst
     subprocess.run(rsync_cmd)
