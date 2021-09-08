@@ -1,5 +1,7 @@
 # scp-rsync
 
+([At OpenSSH 8.7](http://www.openssh.com/txt/release-8.7), `scp -s` is added to use SFTP in scp.  It is better to use it, but this script works with old OpenSSH if there is rsync...)
+
 [At OpenSSH 8.0 release](http://www.openssh.com/txt/release-8.0), scp has been declared as not recommended(the protocol is outdated). This is a script which behave like scp, written in Python3 with rsync.
 
 This script is written to use in interactive shell, not mission critical shell scripts because it is impossible to behave in the same way perfectly using rsync.
